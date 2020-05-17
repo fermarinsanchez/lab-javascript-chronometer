@@ -40,10 +40,16 @@ function printMilliseconds() {
 
 function printSplit() {
   // ... your code goes here
+  const liGen = document.createElement("li");                
+  const textInLi = document.createTextNode(chronometer.splitClick());        
+  liGen.appendChild(textInLi);                             
+  document.getElementById('splits').appendChild(liGen);     
 }
 
 function clearSplits() {
   // ... your code goes here
+  const splitList = document.getElementById("splits");  
+  splitList.innerHTML = ""
 }
 
 function setStopBtn() {
@@ -94,6 +100,7 @@ btnRight.addEventListener("click", () => {
     printTime()
     clearSplits()
   } else {
-    setResetBtn()
+    printSplit()
+    // setResetBtn()
   }
 })
